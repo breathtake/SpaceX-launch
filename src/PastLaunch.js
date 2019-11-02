@@ -55,7 +55,7 @@ const PastLaunch = ({ pastLaunch, pastLaunchID, setPastLaunchID }) => {
               <a href={pastLaunch.links.video_link}>Video</a>
             </li>
             <li>
-              <a href={pastLaunch.links.article_link}>Article</a>
+              <a href={pastLaunch.links.article_link} target="_blank">Article</a>
             </li>
             <li>
               Images:
