@@ -1,5 +1,7 @@
 import React from 'react';
 import Emoji from './Emoji';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
 const PastLaunch = ({ pastLaunch, pastLaunchID, setPastLaunchID }) => {
   console.log(pastLaunch.links.flickr_images);
@@ -55,19 +57,19 @@ const PastLaunch = ({ pastLaunch, pastLaunchID, setPastLaunchID }) => {
               <a href={pastLaunch.links.video_link}>Video</a>
             </li>
             <li>
-              <a href={pastLaunch.links.article_link} target="_blank">Article</a>
-            </li>
-            <li>
-              Images:
-              <ul>
-                {pastLaunch.links.flickr_images.map(link => (
-                  <li key={link}>
-                    <img alt="rocket-launch" width="100%" src={link} />
-                  </li>
-                ))}
-              </ul>
+              <a href={pastLaunch.links.article_link} target="_blank">
+                Article
+              </a>
             </li>
           </ul>
+          Images:
+          <Carousel>
+            {pastLaunch.links.flickr_images.map(link => (
+              <div key={link}>
+                <img alt="rocket-launch" width="100%" src={link} />
+              </div>
+            ))}
+          </Carousel>
         </div>
       }
     </div>
