@@ -1,5 +1,6 @@
 import React from 'react';
 import Emoji from './Emoji';
+import Links from './Links';
 import Gallery from './Gallery';
 
 const PastLaunch = ({ pastLaunch, pastLaunchID, setPastLaunchID }) => {
@@ -50,21 +51,7 @@ const PastLaunch = ({ pastLaunch, pastLaunchID, setPastLaunchID }) => {
             Mass:
             {pastLaunch.rocket.rocket.mass.kg + 'kg'}
           </p>
-          <ul>
-            Links:
-            <li>
-              <a href={pastLaunch.links.video_link}>Video</a>
-            </li>
-            <li>
-              <a
-                href={pastLaunch.links.article_link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Article
-              </a>
-            </li>
-          </ul>
+          <Links links={pastLaunch.links} />
           <Gallery images={pastLaunch.links.flickr_images} />
         </div>
 				<button
