@@ -1,5 +1,6 @@
 import React from 'react';
 import Emoji from './Emoji';
+import RocketDetails from './RocketDetails';
 
 const NextLaunch = ({ nextLaunch }) => (
   <div id="nextlaunchCard">
@@ -13,31 +14,7 @@ const NextLaunch = ({ nextLaunch }) => (
         Mission
         <Emoji emoji="📌" />:{nextLaunch.mission_name}
       </h3>
-      {
-        <div>
-          <h2>Rocket details:</h2>
-          <h3>
-            Rocket
-            <Emoji emoji="🚀" />:{nextLaunch.rocket.rocket.name}
-          </h3>
-          <p>
-            Diameter:
-            {nextLaunch.rocket.rocket.diameter.meters + 'm'}
-          </p>
-          <p>
-            Height:
-            {nextLaunch.rocket.rocket.height.meters + 'm'}
-          </p>
-          <p>
-            Mass <Emoji emoji="🏋️‍" />:
-            {nextLaunch.rocket.rocket.mass.kg + 'kg'}
-          </p>
-          <p>
-            Details:
-            {nextLaunch.details}
-          </p>
-        </div>
-      }
+      <RocketDetails rocket={nextLaunch.rocket.rocket} />
     </div>
   </div>
 );

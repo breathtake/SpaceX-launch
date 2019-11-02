@@ -1,0 +1,50 @@
+import React from 'react';
+import Emoji from '../Emoji';
+import RocketDetails from '../RocketDetails';
+import Links from './Links';
+import Gallery from './Gallery';
+
+const PastLaunch = ({ pastLaunch, pastLaunchID, setPastLaunchID }) => (
+  <>
+    <h2>Past</h2>
+    <div className="pagination">
+      <button
+        style={{ color: 'black' }}
+        onClick={() => setPastLaunchID(pastLaunchID + 1)}
+      >
+        previous
+      </button>
+      <span>{pastLaunch.id}</span>
+      <button
+        style={{ color: 'black' }}
+        onClick={() => setPastLaunchID(pastLaunchID - 1)}
+      >
+        next
+      </button>
+    </div>
+    <span>
+      <Emoji emoji="🗓" />
+      {pastLaunch.launch_date_local}
+    </span>
+    <h3>
+      Mission
+      <Emoji emoji="📌" />:{pastLaunch.mission_name}
+    </h3>
+    <RocketDetails rocket={pastLaunch.rocket.rocket} />
+    <Links links={pastLaunch.links} />
+    <Gallery images={pastLaunch.links.flickr_images} />
+    <button
+      onClick={() => window.scrollTo(0, 0)}
+      style={{
+        fontSize: '1.5rem',
+        width: '100%',
+        padding: '0.5rem',
+        marginTop: '1rem'
+      }}
+    >
+      go to next launch
+    </button>
+  </>
+);
+
+export default PastLaunch;

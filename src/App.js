@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { launchFetch, composeQueries } from './apolloFetch';
 import { next, past } from './queries';
 import NextLaunch from './NextLaunch';
-import PastLaunch from './PastLaunch';
+import PastLaunch from './PastLaunch/';
 import './style.css';
 
 function App() {
