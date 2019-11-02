@@ -1,13 +1,13 @@
 import React from 'react';
 import Emoji from './Emoji';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
 const PastLaunch = ({ pastLaunch, pastLaunchID, setPastLaunchID }) => {
   console.log(pastLaunch.links.flickr_images);
 
   return (
-    <div>
+    <>
       <h2>Past</h2>
       <div className="pagination">
         <button
@@ -32,7 +32,7 @@ const PastLaunch = ({ pastLaunch, pastLaunchID, setPastLaunchID }) => {
         Mission
         <Emoji emoji="📌" />:{pastLaunch.mission_name}
       </h3>
-      {
+      
         <div>
           <h2>Rocket details:</h2>
           <h3>
@@ -57,13 +57,17 @@ const PastLaunch = ({ pastLaunch, pastLaunchID, setPastLaunchID }) => {
               <a href={pastLaunch.links.video_link}>Video</a>
             </li>
             <li>
-              <a href={pastLaunch.links.article_link} target="_blank">
+              <a
+                href={pastLaunch.links.article_link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Article
               </a>
             </li>
           </ul>
           Images:
-          <Carousel>
+          <Carousel centerMode={true} dynamicHeight={true}>
             {pastLaunch.links.flickr_images.map(link => (
               <div key={link}>
                 <img alt="rocket-launch" width="100%" src={link} />
@@ -71,8 +75,19 @@ const PastLaunch = ({ pastLaunch, pastLaunchID, setPastLaunchID }) => {
             ))}
           </Carousel>
         </div>
-      }
-    </div>
+				<button
+					onClick={() => window.scrollTo(0, 0)}
+					style={{
+						fontSize: '1.5rem',
+						width: '100%',
+						padding: '0.5rem',
+						marginTop: '1rem'
+					}}
+				>
+				go to next launch
+			</button>
+
+    </>
   );
 };
 
