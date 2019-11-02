@@ -29,12 +29,14 @@ function App() {
 
   return (
     <div id="app">
-      <NextLaunch nextLaunch={nextLaunch} />
-      <PastLaunch
-        pastLaunch={pastLaunch}
-        pastLaunchID={pastLaunchID}
-        setPastLaunchID={setPastLaunchID}
-      />
+      {nextLaunch && <NextLaunch nextLaunch={nextLaunch} />}
+      {pastLaunch && (
+        <PastLaunch
+          pastLaunch={pastLaunch}
+          pastLaunchID={pastLaunchID}
+          setPastLaunchID={setPastLaunchID}
+        />
+      )}
     </div>
   );
 }

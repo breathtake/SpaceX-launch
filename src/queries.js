@@ -4,6 +4,7 @@ export const next = `launchNext {
   details
   rocket {
     rocket {
+			name
       diameter {
         meters
       }
@@ -13,7 +14,6 @@ export const next = `launchNext {
       mass {
         kg
       }
-      name
     }
   }
 }`;

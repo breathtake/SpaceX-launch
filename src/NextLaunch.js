@@ -1,4 +1,5 @@
 import React from 'react';
+import Emoji from './Emoji';
 
 const NextLaunch = ({ nextLaunch }) => (
   <div id="nextlaunchCard">
@@ -6,24 +7,37 @@ const NextLaunch = ({ nextLaunch }) => (
       <h1>SpaceX next launch</h1>
       <span>
         🗓
-        {nextLaunch && nextLaunch.launch_date_local}
+        {nextLaunch.launch_date_local}
       </span>
-      <h2>
-        Rocket🚀:
-        {nextLaunch && nextLaunch.rocket.rocket.name}
-      </h2>
       <h3>
-        Mission📌:
-        {nextLaunch && nextLaunch.mission_name}
+        Mission
+        <Emoji emoji="📌" />:{nextLaunch.mission_name}
       </h3>
-      {nextLaunch && (
+      {
         <div>
-          <h4>Rocket details:</h4>
-          {nextLaunch.rocket.rocket.description}
-          <p>Height: {nextLaunch.rocket.rocket.height.meters} m</p>
-          <p>Mass: {nextLaunch.rocket.rocket.mass.kg} kg</p>
+          <h2>Rocket details:</h2>
+          <h3>
+            Rocket
+            <Emoji emoji="🚀" />:{nextLaunch.rocket.rocket.name}
+          </h3>
+          <p>
+            Diameter:
+            {nextLaunch.rocket.rocket.diameter.meters + 'm'}
+          </p>
+          <p>
+            Height:
+            {nextLaunch.rocket.rocket.height.meters + 'm'}
+          </p>
+          <p>
+            Mass <Emoji emoji="🏋️‍" />:
+            {nextLaunch.rocket.rocket.mass.kg + 'kg'}
+          </p>
+          <p>
+            Details:
+            {nextLaunch.details}
+          </p>
         </div>
-      )}
+      }
     </div>
   </div>
 );
