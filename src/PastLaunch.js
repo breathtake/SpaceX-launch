@@ -1,7 +1,6 @@
 import React from 'react';
 import Emoji from './Emoji';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from 'react-responsive-carousel';
+import Gallery from './Gallery';
 
 const PastLaunch = ({ pastLaunch, pastLaunchID, setPastLaunchID }) => {
   console.log(pastLaunch.links.flickr_images);
@@ -66,14 +65,7 @@ const PastLaunch = ({ pastLaunch, pastLaunchID, setPastLaunchID }) => {
               </a>
             </li>
           </ul>
-          Images:
-          <Carousel centerMode={true} dynamicHeight={true}>
-            {pastLaunch.links.flickr_images.map(link => (
-              <div key={link}>
-                <img alt="rocket-launch" width="100%" src={link} />
-              </div>
-            ))}
-          </Carousel>
+          <Gallery images={pastLaunch.links.flickr_images} />
         </div>
 				<button
 					onClick={() => window.scrollTo(0, 0)}
