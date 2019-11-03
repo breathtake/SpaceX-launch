@@ -26,7 +26,7 @@ const PastLaunch = ({
     <RocketDetails rocket={pastLaunch.rocket.rocket} />
     <Links links={pastLaunch.links} />
     <Gallery images={pastLaunch.links.flickr_images} />
-    <GoTopButton text={'go to next launch'} />
+    <GoTopButton />
   </>
 );
 

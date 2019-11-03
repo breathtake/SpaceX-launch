@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
 const StyledGoTopButton = styled.button`
-  display: block;
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: 1rem;
-  font-size: 1.5rem;
-  color: #223;
-  background-color: rgba(255, 255, 255, 0.75);
+  width: 48px;
+  height: 48px;
+  float: right;
+  margin: 1rem;
+  fill: #17202a;
+  background-color: #fdfefe;
   border: none;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 100%;
 `;
 
 export default StyledGoTopButton;
