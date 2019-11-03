@@ -5,6 +5,7 @@ import Mission from '../Mission';
 import RocketDetails from '../RocketDetails';
 import Links from './Links';
 import Gallery from './Gallery';
+import ScrollTopButton from './ScrollTopButton';
 
 const PastLaunch = ({
   pastLaunch,
@@ -25,17 +26,7 @@ const PastLaunch = ({
     <RocketDetails rocket={pastLaunch.rocket.rocket} />
     <Links links={pastLaunch.links} />
     <Gallery images={pastLaunch.links.flickr_images} />
-    <button
-      onClick={() => window.scrollTo(0, 0)}
-      style={{
-        fontSize: '1.5rem',
-        width: '100%',
-        padding: '0.5rem',
-        marginTop: '1rem'
-      }}
-    >
-      go to next launch
-    </button>
+    <ScrollTopButton text={'go to next launch'} />
   </>
 );
 
