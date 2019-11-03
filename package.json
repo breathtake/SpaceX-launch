@@ -3,11 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "apollo-client": "^2.6.4",
     "apollo-fetch": "^0.7.0",
-    "graphql": "^14.4.2",
     "react": "^16.9.0",
-    "react-apollo": "^3.0.1",
     "react-dom": "^16.9.0",
     "react-responsive-carousel": "^3.1.51",
     "react-scripts": "3.1.1"
