@@ -1,7 +1,7 @@
 import React from 'react';
-import Date from './Date';
-import Mission from './Mission';
-import RocketDetails from './RocketDetails';
+import Date from '../Date';
+import Mission from '../Mission';
+import RocketDetails from '../RocketDetails';
 
 const NextLaunch = ({ nextLaunch }) => (
   <div id="nextlaunchCard">

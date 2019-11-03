@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { launchFetch, composeQueries } from './apolloFetch';
 import { next, past, last } from './queries';
-import NextLaunch from './NextLaunch';
-import PastLaunch from './PastLaunch/';
+import NextLaunch from './Launches/NextLaunch';
+import PastLaunch from './Launches/PastLaunch';
 import './style.css';
 
 function App() {
