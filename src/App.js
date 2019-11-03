@@ -3,7 +3,7 @@ import { launchFetch, composeQueries } from './apolloFetch';
 import { next, past, last } from './queries';
 import NextLaunch from './Launches/NextLaunch';
 import PastLaunch from './Launches/PastLaunch';
-import './style.css';
+import GlobalStyle from './styles/GlobalStyle';
 
 function App() {
   const [nextLaunch, setNextLaunch] = useState();
@@ -32,6 +32,7 @@ function App() {
 
   return (
     <div id="app">
+			<GlobalStyle />
       {nextLaunch && <NextLaunch nextLaunch={nextLaunch} />}
       {pastLaunch && (
         <PastLaunch

@@ -1,3 +1,6 @@
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
 *,
 html,
 body {
@@ -10,9 +13,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 html {
   background-color: #333399;
 }
+
 #app {
   height: 200vh;
 }
@@ -32,6 +37,7 @@ html {
 .content {
   padding: 1rem;
 }
+
 .content h1 {
   text-align: center;
 }
@@ -45,3 +51,6 @@ button:disabled,
 button[disabled]{
   opacity: 0.5;
 }
+`;
+
+export default GlobalStyle
