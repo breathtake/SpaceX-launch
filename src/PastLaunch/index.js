@@ -1,28 +1,25 @@
 import React from 'react';
 import Emoji from '../Emoji';
+import Pagination from './Pagination';
 import Mission from '../Mission';
 import RocketDetails from '../RocketDetails';
 import Links from './Links';
 import Gallery from './Gallery';
 
-const PastLaunch = ({ pastLaunch, pastLaunchID, setPastLaunchID, lastLaunchID }) => (
+const PastLaunch = ({
+  pastLaunch,
+  pastLaunchID,
+  setPastLaunchID,
+  lastLaunchID
+}) => (
   <>
     <h2>Past launches</h2>
-    <div className="pagination">
-      <button
-        style={{ color: 'black' }}
-        onClick={() => setPastLaunchID(pastLaunchID + 1)}
-      >
-        previous
-      </button>
-      <span>{pastLaunch.id} of {lastLaunchID}</span>
-      <button
-        style={{ color: 'black' }}
-        onClick={() => setPastLaunchID(pastLaunchID - 1)}
-      >
-        next
-      </button>
-    </div>
+    <Pagination
+      pastLaunch={pastLaunch}
+      pastLaunchID={pastLaunchID}
+      setPastLaunchID={setPastLaunchID}
+      lastLaunchID={lastLaunchID}
+    />
     <span>
       <Emoji emoji="🗓" />
       {pastLaunch.launch_date_local}
