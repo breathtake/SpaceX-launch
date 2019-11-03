@@ -5,7 +5,7 @@ import Mission from '../Mission';
 import RocketDetails from '../RocketDetails';
 import Links from './Links';
 import Gallery from './Gallery';
-import ScrollTopButton from './ScrollTopButton';
+import GoTopButton from './GoTopButton';
 
 const PastLaunch = ({
   pastLaunch,
@@ -26,7 +26,7 @@ const PastLaunch = ({
     <RocketDetails rocket={pastLaunch.rocket.rocket} />
     <Links links={pastLaunch.links} />
     <Gallery images={pastLaunch.links.flickr_images} />
-    <ScrollTopButton text={'go to next launch'} />
+    <GoTopButton text={'go to next launch'} />
   </>
 );
 
