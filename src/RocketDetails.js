@@ -3,11 +3,11 @@ import Emoji from './Emoji';
 
 const RocketDetails = ({ rocket }) => (
   <>
-    <h2>Rocket details:</h2>
-    <h3>
+    <h3>Rocket details:</h3>
+    <h4>
       Rocket
       <Emoji emoji="🚀" />:{rocket.name}
-    </h3>
+    </h4>
     <p>
       Diameter:
       {rocket.diameter.meters + 'm'}

@@ -1,5 +1,6 @@
 import React from 'react';
 import Emoji from './Emoji';
+import Mission from './Mission';
 import RocketDetails from './RocketDetails';
 
 const NextLaunch = ({ nextLaunch }) => (
@@ -7,13 +8,10 @@ const NextLaunch = ({ nextLaunch }) => (
     <div className="content">
       <h1>SpaceX next launch</h1>
       <span>
-        🗓
+        <Emoji emoji="🗓" />
         {nextLaunch.launch_date_local}
       </span>
-      <h3>
-        Mission
-        <Emoji emoji="📌" />:{nextLaunch.mission_name}
-      </h3>
+      <Mission name={nextLaunch.mission_name} />
       <RocketDetails rocket={nextLaunch.rocket.rocket} />
     </div>
   </div>

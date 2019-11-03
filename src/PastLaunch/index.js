@@ -1,5 +1,6 @@
 import React from 'react';
 import Emoji from '../Emoji';
+import Mission from '../Mission';
 import RocketDetails from '../RocketDetails';
 import Links from './Links';
 import Gallery from './Gallery';
@@ -26,10 +27,7 @@ const PastLaunch = ({ pastLaunch, pastLaunchID, setPastLaunchID }) => (
       <Emoji emoji="🗓" />
       {pastLaunch.launch_date_local}
     </span>
-    <h3>
-      Mission
-      <Emoji emoji="📌" />:{pastLaunch.mission_name}
-    </h3>
+    <Mission name={pastLaunch.mission_name} />
     <RocketDetails rocket={pastLaunch.rocket.rocket} />
     <Links links={pastLaunch.links} />
     <Gallery images={pastLaunch.links.flickr_images} />
