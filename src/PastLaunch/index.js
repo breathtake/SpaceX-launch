@@ -5,9 +5,9 @@ import RocketDetails from '../RocketDetails';
 import Links from './Links';
 import Gallery from './Gallery';
 
-const PastLaunch = ({ pastLaunch, pastLaunchID, setPastLaunchID }) => (
+const PastLaunch = ({ pastLaunch, pastLaunchID, setPastLaunchID, lastLaunchID }) => (
   <>
-    <h2>Past</h2>
+    <h2>Past launches</h2>
     <div className="pagination">
       <button
         style={{ color: 'black' }}
@@ -15,7 +15,7 @@ const PastLaunch = ({ pastLaunch, pastLaunchID, setPastLaunchID }) => (
       >
         previous
       </button>
-      <span>{pastLaunch.id}</span>
+      <span>{pastLaunch.id} of {lastLaunchID}</span>
       <button
         style={{ color: 'black' }}
         onClick={() => setPastLaunchID(pastLaunchID - 1)}

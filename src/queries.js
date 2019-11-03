@@ -43,3 +43,7 @@ export const past = offset => `launchesPast(offset: ${offset || 0}, limit: 1) {
 		flickr_images
 	}
 }`;
+
+export const last = `launchLatest {
+	id
+}`;
