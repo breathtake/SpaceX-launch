@@ -1,6 +1,6 @@
 import React from 'react';
-import Emoji from '../Emoji';
 import Pagination from './Pagination';
+import Date from '../Date';
 import Mission from '../Mission';
 import RocketDetails from '../RocketDetails';
 import Links from './Links';
@@ -20,10 +20,7 @@ const PastLaunch = ({
       setPastLaunchID={setPastLaunchID}
       lastLaunchID={lastLaunchID}
     />
-    <span>
-      <Emoji emoji="🗓" />
-      {pastLaunch.launch_date_local}
-    </span>
+    <Date date={pastLaunch.launch_date_local} />
     <Mission name={pastLaunch.mission_name} />
     <RocketDetails rocket={pastLaunch.rocket.rocket} />
     <Links links={pastLaunch.links} />
