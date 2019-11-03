@@ -1,7 +1,7 @@
 import React from 'react';
 import StyledGoTopButton from '../../styles/StyledGoTopButton';
 
-const ScrollTopButton = () => (
+const GoTopButton = () => (
   <StyledGoTopButton onClick={() => window.scrollTo(0, 0)}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,4 +15,4 @@ const ScrollTopButton = () => (
   </StyledGoTopButton>
 );
 
-export default ScrollTopButton;
+export default GoTopButton;
