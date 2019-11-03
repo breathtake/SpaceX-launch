@@ -2,13 +2,14 @@ import React from 'react';
 
 const Pagination = ({
   pastLaunch,
-  pastLaunchID,
+  pastLaunchID, //TODO: rename this
   setPastLaunchID,
   lastLaunchID
 }) => (
   <div className="pagination">
     <button
       style={{ color: 'black' }}
+      disabled={pastLaunch.id <= 1}
       onClick={() => setPastLaunchID(pastLaunchID + 1)}
     >
       previous
@@ -18,6 +19,7 @@ const Pagination = ({
     </span>
     <button
       style={{ color: 'black' }}
+      disabled={pastLaunch.id === lastLaunchID}
       onClick={() => setPastLaunchID(pastLaunchID - 1)}
     >
       next
