@@ -51,6 +51,12 @@ button:disabled,
 button[disabled]{
   opacity: 0.5;
 }
+
+.carousel .slide {
+	display: flex;
+  justify-content: center;
+	background: transparent;
+}
 `;
 
-export default GlobalStyle
+export default GlobalStyle;

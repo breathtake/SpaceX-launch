@@ -22,7 +22,7 @@ const PastLaunch = ({
       lastLaunchID={lastLaunchID}
     />
     <Date date={pastLaunch.launch_date_local} />
-    <Mission name={pastLaunch.mission_name} />
+    <Mission name={pastLaunch.mission_name} /> {/* TODO: add links > mission_patch_small */}
     <RocketDetails rocket={pastLaunch.rocket.rocket} />
     <Links links={pastLaunch.links} />
     <Gallery images={pastLaunch.links.flickr_images} />
