@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Pagination = ({
+const DesktopPagination = ({
   pastLaunch,
-  pastLaunchID, //TODO: rename this
+  pastLaunchID,
   setPastLaunchID,
   lastLaunchID
 }) => (
@@ -27,4 +27,4 @@ const Pagination = ({
   </div>
 );
 
-export default Pagination;
+export default DesktopPagination;

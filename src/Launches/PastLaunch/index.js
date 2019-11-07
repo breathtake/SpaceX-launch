@@ -1,5 +1,5 @@
 import React from 'react';
-import Pagination from './Pagination';
+import Pagination from './Pagination/Pagination';
 import Date from '../Date';
 import Mission from '../Mission';
 import RocketDetails from '../RocketDetails';
