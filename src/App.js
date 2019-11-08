@@ -8,11 +8,11 @@ import GlobalStyle from './styles/GlobalStyle';
 function App() {
   const [nextLaunch, setNextLaunch] = useState();
   const [pastLaunch, setPastLaunch] = useState();
-  const [pastLaunchID, setPastLaunchID] = useState(0);
-  const [lastLaunchID, setLastLaunchID] = useState(0);
-
+  const [pastLaunchOffset, setPastLaunchOffset] = useState(0);
+	const [lastLaunchID, setLastLaunchID] = useState(0);
+	
   useEffect(() => {
-    const composedQueries = composeQueries(next, past(pastLaunchID), last);
+    const composedQueries = composeQueries(next, past(pastLaunchOffset), last);
     let mounted = true;
 
     mounted &&
@@ -28,7 +28,7 @@ function App() {
         });
 
     return () => (mounted = false);
-  }, [pastLaunchID]);
+  }, [pastLaunchOffset]);
 
   return (
     <div id="app">
@@ -37,8 +37,8 @@ function App() {
       {pastLaunch && (
         <PastLaunch
           pastLaunch={pastLaunch}
-          pastLaunchID={pastLaunchID}
-          setPastLaunchID={setPastLaunchID}
+          pastLaunchOffset={pastLaunchOffset}
+          setPastLaunchOffset={setPastLaunchOffset}
           lastLaunchID={lastLaunchID}
         />
       )}

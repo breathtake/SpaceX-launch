@@ -12,6 +12,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+	user-select: none;
+	outline: none;
 }
 
 html {
@@ -56,30 +58,6 @@ button[disabled]{
 	display: flex;
   justify-content: center;
 	background: transparent;
-}
-
-.menu-item {
-  padding: 0.25rem;
-  margin: 5px;
-  user-select: none;
-  cursor: pointer;
-	border: none;
-	border-radius: 0.5rem;
-	font-size: 1.5rem;
-}
-.menu-item-wrapper.active {
-	border-radius: 0.5rem;
-	background-color: blueviolet;
-	outline: none;
-	user-select: none;
-	-webkit-tap-highlight-color: transparent;
-}
-.menu-item.active {
-}
-
-.scroll-menu-arrow {
-  padding: 20px;
-  cursor: pointer;
 }
 `;
 

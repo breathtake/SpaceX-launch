@@ -9,16 +9,16 @@ import GoTopButton from './GoTopButton';
 
 const PastLaunch = ({
   pastLaunch,
-  pastLaunchID,
-  setPastLaunchID,
+  pastLaunchOffset,
+  setPastLaunchOffset,
   lastLaunchID
 }) => (
   <>
     <h2>Past launches</h2>
     <Pagination
       pastLaunch={pastLaunch}
-      pastLaunchID={pastLaunchID}
-      setPastLaunchID={setPastLaunchID}
+      pastLaunchOffset={pastLaunchOffset}
+      setPastLaunchOffset={setPastLaunchOffset}
       lastLaunchID={lastLaunchID}
     />
     <Date date={pastLaunch.launch_date_local} />

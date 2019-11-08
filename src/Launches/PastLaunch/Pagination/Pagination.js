@@ -1,27 +1,25 @@
 import React from 'react';
 import DesktopPagination from './DesktopPagination';
-import MobilePagination from './MobilePagination';
+import MobilePagination from './MobilePagination/';
 import { useMediaQuery } from 'react-responsive';
 
 const Pagination = ({
   pastLaunch,
-  pastLaunchID, //TODO: rename this
-  setPastLaunchID,
+  pastLaunchOffset,
+  setPastLaunchOffset,
   lastLaunchID
 }) => {
   const isDesktop = useMediaQuery({ minWidth: 992 });
   return isDesktop ? (
     <DesktopPagination
       pastLaunch={pastLaunch}
-      pastLaunchID={pastLaunchID}
-      setPastLaunchID={setPastLaunchID}
+      pastLaunchOffset={pastLaunchOffset}
+      setPastLaunchOffset={setPastLaunchOffset}
       lastLaunchID={lastLaunchID}
     />
   ) : (
     <MobilePagination
-      pastLaunch={pastLaunch}
-      pastLaunchID={pastLaunchID}
-      setPastLaunchID={setPastLaunchID}
+      setPastLaunchOffset={setPastLaunchOffset}
       lastLaunchID={lastLaunchID}
     />
   );

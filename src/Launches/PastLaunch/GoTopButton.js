@@ -1,5 +1,5 @@
 import React from 'react';
-import StyledGoTopButton from '../../styles/StyledGoTopButton';
+import StyledGoTopButton from 'styles/StyledGoTopButton';
 
 const GoTopButton = () => (
   <StyledGoTopButton onClick={() => window.scrollTo(0, 0)}>
