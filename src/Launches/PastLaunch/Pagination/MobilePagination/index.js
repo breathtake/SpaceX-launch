@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight } from './Arrows';
 import List from './List';
 import ScrollList from 'react-horizontal-scrolling-menu';
@@ -11,15 +11,32 @@ const generateNums = max => {
   return result;
 };
 
-const MobilePagination = ({ setPastLaunchOffset, lastLaunchID }) => {
-  const nums = generateNums(lastLaunchID);
+const MobilePaginationContainer = ({ setPastLaunchOffset, lastLaunchID }) => {
+  const last = lastLaunchID;
 
-  const list = nums.map(num => ({ name: num }));
+  return (
+    last > 0 && (
+      <MobilePagination
+        setPastLaunchOffset={setPastLaunchOffset}
+        lastLaunchID={lastLaunchID}
+        last={last}
+      />
+    )
+  );
+};
 
-  const menuItems = List(list, lastLaunchID);
+const MobilePagination = ({ setPastLaunchOffset, last }) => {
+  const [selected, setSelected] = useState(last);
+
+  const pageNums = generateNums(last);
+
+  const list = pageNums.map(num => ({ name: num }));
+
+  const menuItems = List(list, last);
 
   const onSelect = key => {
-    setPastLaunchOffset(lastLaunchID - key);
+    setPastLaunchOffset(last - key);
+    setSelected(key);
   };
 
   return (
@@ -28,7 +45,7 @@ const MobilePagination = ({ setPastLaunchOffset, lastLaunchID }) => {
         data={menuItems}
         arrowLeft={ArrowLeft}
         arrowRight={ArrowRight}
-        selected={lastLaunchID}
+        selected={selected}
         onSelect={onSelect}
         wheel
         scrollToSelected
@@ -40,4 +57,4 @@ const MobilePagination = ({ setPastLaunchOffset, lastLaunchID }) => {
   );
 };
 
-export default MobilePagination;
+export default MobilePaginationContainer;
