@@ -20,9 +20,9 @@ html {
   background-color: #333399;
 }
 
-#app {
+/* #app {
   height: 200vh;
-}
+} */
 
 #nextlaunchCard {
   height: 100vh;
