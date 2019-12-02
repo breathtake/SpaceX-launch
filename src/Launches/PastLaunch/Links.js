@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Links = ({ links }) => (
+const Links = ({ links: { video_link, article_link } }) => (
   <ul>
     Links:
     <li>
-      <a href={links.video_link}>Video</a>
+      <a href={video_link}>Video</a>
     </li>
     <li>
-      <a href={links.article_link} target="_blank" rel="noopener noreferrer">
+      <a href={article_link} target="_blank" rel="noopener noreferrer">
         Article
       </a>
     </li>

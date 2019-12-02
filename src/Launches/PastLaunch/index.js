@@ -9,6 +9,12 @@ import GoTopButton from './GoTopButton';
 
 const PastLaunch = ({
   pastLaunch,
+  pastLaunch: {
+    launch_date_local,
+    mission_name,
+    rocket: { rocket },
+    links
+  },
   pastLaunchOffset,
   setPastLaunchOffset,
   lastLaunchID
@@ -21,11 +27,12 @@ const PastLaunch = ({
       setPastLaunchOffset={setPastLaunchOffset}
       lastLaunchID={lastLaunchID}
     />
-    <Date date={pastLaunch.launch_date_local} />
-    <Mission name={pastLaunch.mission_name} /> {/* TODO: add links > mission_patch_small */}
-    <RocketDetails rocket={pastLaunch.rocket.rocket} />
-    <Links links={pastLaunch.links} />
-    <Gallery images={pastLaunch.links.flickr_images} />
+    <Date date={launch_date_local} />
+    <Mission name={mission_name} />{' '}
+    {/* TODO: add links > mission_patch_small */}
+    <RocketDetails rocket={rocket} />
+    <Links links={links} />
+    <Gallery images={links.flickr_images} />
     <GoTopButton />
   </>
 );

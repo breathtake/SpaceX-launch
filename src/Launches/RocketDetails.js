@@ -1,27 +1,29 @@
 import React from 'react';
 import Emoji from './Emoji';
 
-const RocketDetails = ({ rocket }) => (
+const RocketDetails = ({
+  rocket: { name, diameter, height, mass, details }
+}) => (
   <>
     <h3>Rocket details:</h3>
     <h4>
       Rocket
-      <Emoji emoji="🚀" />:{rocket.name}
+      <Emoji emoji="🚀" />:{name}
     </h4>
     <p>
       Diameter:
-      {rocket.diameter.meters + 'm'}
+      {diameter.meters + 'm'}
     </p>
     <p>
       Height:
-      {rocket.height.meters + 'm'}
+      {height.meters + 'm'}
     </p>
     <p>
-      Mass <Emoji emoji="🏋️‍" />: {rocket.mass.kg + 'kg'}
+      Mass <Emoji emoji="🏋️‍" />: {mass.kg + 'kg'}
     </p>
     <p>
       Details:
-      {rocket.details ? rocket.details : 'No details'}
+      {details ? details : 'No details'}
     </p>
   </>
 );

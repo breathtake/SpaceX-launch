@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DesktopPagination = ({
-  pastLaunch,
+  pastLaunch: { id },
   pastLaunchOffset,
   setPastLaunchOffset,
   lastLaunchID
@@ -9,17 +9,17 @@ const DesktopPagination = ({
   <div className="pagination">
     <button
       style={{ color: 'black' }}
-      disabled={pastLaunch.id <= 1}
+      disabled={id <= 1}
       onClick={() => setPastLaunchOffset(pastLaunchOffset + 1)}
     >
       previous
     </button>
     <span>
-      {pastLaunch.id} of {lastLaunchID}
+      {id} of {lastLaunchID}
     </span>
     <button
       style={{ color: 'black' }}
-      disabled={pastLaunch.id === lastLaunchID}
+      disabled={id === lastLaunchID}
       onClick={() => setPastLaunchOffset(pastLaunchOffset - 1)}
     >
       next
