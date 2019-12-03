@@ -23,17 +23,11 @@ html {
 	overflow-y: scroll;
 }
 
-.content {
-  padding: 1rem;
-}
-
-.content h1 {
-  text-align: center;
+li {
+	list-style: none;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
-  #nextlaunchCard * {
-  }
 }
 
 button:disabled,
@@ -44,7 +38,6 @@ button[disabled]{
 .carousel .slide {
 	display: flex;
   justify-content: center;
-	background: transparent;
 }
 `;
 

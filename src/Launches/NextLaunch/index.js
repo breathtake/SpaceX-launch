@@ -10,14 +10,12 @@ const NextLaunch = ({
     rocket: { rocket }
   }
 }) => (
-  <div id="nextlaunchCard">
-    <div className="content">
-      <h1>SpaceX next launch</h1>
-      <Date date={launch_date_local} />
-      <Mission name={mission_name} />
-      <RocketDetails rocket={rocket} />
-    </div>
-  </div>
+  <>
+    <h1>SpaceX next launch</h1>
+    <Date date={launch_date_local} />
+    <Mission name={mission_name} />
+    <RocketDetails rocket={rocket} />
+  </>
 );
 
 export default NextLaunch;

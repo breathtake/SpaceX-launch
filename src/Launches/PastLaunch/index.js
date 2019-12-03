@@ -20,7 +20,7 @@ const PastLaunch = ({
   lastLaunchID
 }) => (
   <>
-    <h2>Past launches</h2>
+    <h1>Past launches</h1>
     <Pagination
       pastLaunch={pastLaunch}
       pastLaunchOffset={pastLaunchOffset}

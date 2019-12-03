@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import NextLaunch from './Launches/NextLaunch';
 import PastLaunch from './Launches/PastLaunch';
 import { NavigationBar, StyledNavButton } from 'styles/NavigationBar';
+import TabContainer from 'styles/TabContainer';
 
 const Tabs = ({
   nextLaunch,
@@ -52,10 +53,10 @@ const Tabs = ({
   );
 
   return (
-    <div>
+    <>
       <Navigation />
-      {tabs[activeTab]}
-    </div>
+      <TabContainer>{tabs[activeTab]}</TabContainer>
+    </>
   );
 };
 

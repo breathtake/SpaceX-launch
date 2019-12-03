@@ -14,7 +14,8 @@ const StyledItem = styled.div`
     isSelected &&
     `
     border-radius: 0.5rem;
-		background-color: #f27;
+		background-color: white;
+		color: #050525;
 		outline: none;
 		user-select: none;
 		-webkit-tap-highlight-color: transparent;
