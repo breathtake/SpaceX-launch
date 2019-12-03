@@ -17,23 +17,10 @@ body {
 }
 
 html {
-  background-color: #333399;
-}
-
-/* #app {
-  height: 200vh;
-} */
-
-#nextlaunchCard {
-  height: 100vh;
-  background-image: linear-gradient(
-    to bottom,
-    #333399,
-    #6836ae,
-    #9a33be,
-    #cd27c8,
-    #ff00cc
-  );
+	min-height: 100vh;
+  background-color: #050525;
+	background-image: linear-gradient(to bottom, #050525, #07082e, #060b38, #080d41, #0d0d4a);
+	overflow-y: scroll;
 }
 
 .content {

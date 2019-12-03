@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import NextLaunch from './Launches/NextLaunch';
 import PastLaunch from './Launches/PastLaunch';
+import { NavigationBar, StyledNavButton } from 'styles/NavigationBar';
 
 const Tabs = ({
   nextLaunch,
@@ -26,17 +27,33 @@ const Tabs = ({
   const changeTab = tabName => setActiveTab(tabName);
 
   const NextLaunchButton = () => (
-    <button onClick={() => changeTab('next')}>Next</button>
+    <StyledNavButton
+      isActive={activeTab === 'next' && true}
+      onClick={() => changeTab('next')}
+    >
+      Next
+    </StyledNavButton>
   );
 
   const PastLaunchButton = () => (
-    <button onClick={() => changeTab('past')}>Past</button>
+    <StyledNavButton
+      isActive={activeTab === 'past' && true}
+      onClick={() => changeTab('past')}
+    >
+      Past
+    </StyledNavButton>
+  );
+
+  const Navigation = () => (
+    <NavigationBar>
+      <NextLaunchButton />
+      <PastLaunchButton />
+    </NavigationBar>
   );
 
   return (
     <div>
-      <NextLaunchButton />
-      <PastLaunchButton />
+      <Navigation />
       {tabs[activeTab]}
     </div>
   );
