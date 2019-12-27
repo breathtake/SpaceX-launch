@@ -1,7 +1,10 @@
 export const next = `launchNext {
   launch_date_local
   mission_name
-  details
+	details
+	links {
+		mission_patch_small
+	}
   rocket {
     rocket {
 			name
@@ -41,6 +44,7 @@ export const past = offset => `launchesPast(offset: ${offset || 0}, limit: 1) {
 		video_link
 		article_link
 		flickr_images
+		mission_patch_small
 	}
 }`;
 
