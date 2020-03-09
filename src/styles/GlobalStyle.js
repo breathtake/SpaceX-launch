@@ -6,7 +6,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  color: white;
+  /* color: white; */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -18,9 +18,19 @@ body {
 
 html {
 	min-height: 100vh;
-  background-color: #050525;
-	background-image: linear-gradient(to bottom, #050525, #07082e, #060b38, #080d41, #0d0d4a);
+  /* background-color: #050525; */
+	/* background-image: linear-gradient(to bottom, #050525, #07082e, #060b38, #080d41, #0d0d4a); */
 	overflow-y: scroll;
+}
+
+html, 
+body, 
+#root,
+#root>div, 
+#app
+/* , #app>div */
+ {
+  height: 100%
 }
 
 li {

@@ -1,63 +1,78 @@
-import React, { useState } from 'react';
+import React from 'react';
 import NextLaunch from './Launches/NextLaunch';
 import PastLaunch from './Launches/PastLaunch';
-import { NavigationBar, StyledNavButton } from 'styles/NavigationBar';
-import TabContainer from 'styles/TabContainer';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
-const Tabs = ({
+const TabPanel = ({ children, value, index, ...other }) => (
+  <Typography
+    component="div"
+    role="tabpanel"
+    hidden={value !== index}
+    id={`simple-tabpanel-${index}`}
+    aria-labelledby={`simple-tab-${index}`}
+    {...other}
+  >
+    {value === index && <Box p={3}>{children}</Box>}
+  </Typography>
+);
+
+const a11yProps = index => ({
+  id: `simple-tab-${index}`,
+  'aria-controls': `simple-tabpanel-${index}`
+});
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper
+  }
+}));
+
+const TopTabs = ({
   nextLaunch,
   pastLaunch,
   pastLaunchOffset,
   setPastLaunchOffset,
   lastLaunchID
 }) => {
-  const [activeTab, setActiveTab] = useState('next');
+  const classes = useStyles();
+  const [value, setValue] = React.useState(0);
 
-  const tabs = {
-    next: <NextLaunch nextLaunch={nextLaunch} />,
-    past: (
-      <PastLaunch
-        pastLaunch={pastLaunch}
-        pastLaunchOffset={pastLaunchOffset}
-        setPastLaunchOffset={setPastLaunchOffset}
-        lastLaunchID={lastLaunchID}
-      />
-    )
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
   };
 
-  const changeTab = tabName => setActiveTab(tabName);
-
-  const NextLaunchButton = () => (
-    <StyledNavButton
-      isActive={activeTab === 'next' && true}
-      onClick={() => changeTab('next')}
-    >
-      Next
-    </StyledNavButton>
-  );
-
-  const PastLaunchButton = () => (
-    <StyledNavButton
-      isActive={activeTab === 'past' && true}
-      onClick={() => changeTab('past')}
-    >
-      Past
-    </StyledNavButton>
-  );
-
-  const Navigation = () => (
-    <NavigationBar>
-      <NextLaunchButton />
-      <PastLaunchButton />
-    </NavigationBar>
-  );
-
   return (
-    <>
-      <Navigation />
-      <TabContainer>{tabs[activeTab]}</TabContainer>
-    </>
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          centered
+          aria-label="simple tabs example"
+        >
+          <Tab label="Next Launch" {...a11yProps(0)} />
+          <Tab label="Past Launches" {...a11yProps(1)} />
+        </Tabs>
+      </AppBar>
+      <TabPanel value={value} index={0}>
+        <NextLaunch nextLaunch={nextLaunch} />
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        <PastLaunch
+          pastLaunch={pastLaunch}
+          pastLaunchOffset={pastLaunchOffset}
+          setPastLaunchOffset={setPastLaunchOffset}
+          lastLaunchID={lastLaunchID}
+        />
+      </TabPanel>
+    </div>
   );
 };
 
-export default Tabs;
+export default TopTabs;
