@@ -23,7 +23,7 @@ const RocketDetails = ({
     </p>
     <p>
       Details:
-      {details ? details : 'No details'} //FIXME: its mission details
+      {details ? details : 'No details'} {/* FIXME: its mission details */}
     </p>
   </>
 );
